@@ -7,7 +7,7 @@ package CapaPresentacion;
 
 //import CapaPresentacion.Matenimientos.Cliente.frmNuevoCliente;
 
-import CapaPresentacion.Matenimientos.Ciente.pModificarCliente;
+import CapaPresentacion.Mantenimientos.Clientes.pModificarCliente;
 
 
 

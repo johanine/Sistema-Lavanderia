@@ -7,6 +7,9 @@ package CapaPresentacion;
 
 import CapaPresentacion.Mantenimientos.Clientes.pAgregarCliente;
 import CapaPresentacion.*;
+import java.beans.PropertyVetoException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author Cesia
@@ -41,6 +44,9 @@ public class frmPrincipal extends javax.swing.JFrame {
         jMenuMantenimiento = new javax.swing.JMenu();
         mClientes = new javax.swing.JMenu();
         miAgregarCliente = new javax.swing.JMenuItem();
+        miModificarCliente = new javax.swing.JMenuItem();
+        miBuscar = new javax.swing.JMenuItem();
+        miListarClientes = new javax.swing.JMenuItem();
         miUsuarios = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem9 = new javax.swing.JMenuItem();
@@ -52,8 +58,6 @@ public class frmPrincipal extends javax.swing.JFrame {
         jMenuItem10 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jmCliente = new javax.swing.JMenu();
-        jmiRegistrarCliente = new javax.swing.JMenuItem();
         jmReportes = new javax.swing.JMenu();
         jmiRepClientes = new javax.swing.JMenuItem();
         jmiRepUsuario = new javax.swing.JMenuItem();
@@ -113,6 +117,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         jMenuMantenimiento.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
         mClientes.setText("Clientes");
+        mClientes.setFont(new java.awt.Font("Segoe UI Light", 0, 16)); // NOI18N
 
         miAgregarCliente.setText("Agregar cliente");
         miAgregarCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -121,6 +126,25 @@ public class frmPrincipal extends javax.swing.JFrame {
             }
         });
         mClientes.add(miAgregarCliente);
+
+        miModificarCliente.setText("Modificar");
+        miModificarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miModificarClienteActionPerformed(evt);
+            }
+        });
+        mClientes.add(miModificarCliente);
+
+        miBuscar.setText("Buscar");
+        miBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miBuscarActionPerformed(evt);
+            }
+        });
+        mClientes.add(miBuscar);
+
+        miListarClientes.setText("Listar clientes");
+        mClientes.add(miListarClientes);
 
         jMenuMantenimiento.add(mClientes);
 
@@ -133,6 +157,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         jMenuMantenimiento.add(miUsuarios);
 
         jMenu2.setText("jMenu2");
+        jMenu2.setFont(new java.awt.Font("Segoe UI Light", 0, 16)); // NOI18N
 
         jMenuItem9.setText("jMenuItem9");
         jMenu2.add(jMenuItem9);
@@ -182,19 +207,6 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jmCliente.setText("Cliente");
-        jmCliente.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
-
-        jmiRegistrarCliente.setText("Registrar Cliente");
-        jmiRegistrarCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmiRegistrarClienteActionPerformed(evt);
-            }
-        });
-        jmCliente.add(jmiRegistrarCliente);
-
-        jMenuBar1.add(jmCliente);
-
         jmReportes.setText("Reportes");
         jmReportes.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
@@ -242,24 +254,22 @@ public class frmPrincipal extends javax.swing.JFrame {
        this.dispose();
     }//GEN-LAST:event_miSalirActionPerformed
 
-    private void jmiRegistrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiRegistrarClienteActionPerformed
-        // TODO add your handling code here:
-        pAgregarCliente cliente = new pAgregarCliente();
-        jdpPantallaInicio.add(cliente);
-        cliente.setVisible(true);
-    }//GEN-LAST:event_jmiRegistrarClienteActionPerformed
-
     private void miAgregarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAgregarClienteActionPerformed
         // TODO add your handling code here:
         pAgregarCliente cliente = new pAgregarCliente();
         jdpPantallaInicio.add(cliente);
-        cliente.setVisible(true);
+        try {
+            cliente.setVisible(true);
+            cliente.setMaximum(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(frmPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }//GEN-LAST:event_miAgregarClienteActionPerformed
 
     private void miUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miUsuariosActionPerformed
         // TODO add your handling code here:
-        pNuevoCliente nuevo = new pNuevoCliente();
+        pAgregarCliente nuevo = new pAgregarCliente();
         jdpPantallaInicio.add(nuevo);
         nuevo.setVisible(true);
 
@@ -272,6 +282,16 @@ public class frmPrincipal extends javax.swing.JFrame {
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         
     }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void miModificarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miModificarClienteActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_miModificarClienteActionPerformed
+
+    private void miBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miBuscarActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_miBuscarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -326,13 +346,14 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuMantenimiento;
     private javax.swing.JMenu jMenuSesion;
     private javax.swing.JDesktopPane jdpPantallaInicio;
-    private javax.swing.JMenu jmCliente;
     private javax.swing.JMenu jmReportes;
-    private javax.swing.JMenuItem jmiRegistrarCliente;
     private javax.swing.JMenuItem jmiRepClientes;
     private javax.swing.JMenuItem jmiRepUsuario;
     private javax.swing.JMenu mClientes;
     private javax.swing.JMenuItem miAgregarCliente;
+    private javax.swing.JMenuItem miBuscar;
+    private javax.swing.JMenuItem miListarClientes;
+    private javax.swing.JMenuItem miModificarCliente;
     private javax.swing.JMenuItem miProductos;
     private javax.swing.JMenuItem miSalir;
     private javax.swing.JMenuItem miUsuarios;

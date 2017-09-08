@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package CapaPresentacion.Matenimientos.Ciente;
+package CapaPresentacion.Mantenimientos.Clientes;
 
 import CapaDatos.*;
 import CapaLogica.*;
@@ -48,7 +48,7 @@ public class pBuscarCliente extends javax.swing.JPanel {
         btnCancelar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         txtContenido = new javax.swing.JTextField();
-        cmbCampo = new javax.swing.JComboBox<>();
+        cmbCampo = new javax.swing.JComboBox<String>();
 
         jLabel1.setText("CAMPO: ");
 
