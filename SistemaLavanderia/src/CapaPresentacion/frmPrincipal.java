@@ -5,7 +5,7 @@
  */
 package CapaPresentacion;
 
-import CapaPresentacion.Matenimientos.Ciente.pAgregarCliente;
+import CapaPresentacion.Mantenimientos.Clientes.pAgregarCliente;
 import CapaPresentacion.*;
 /**
  *
@@ -39,7 +39,9 @@ public class frmPrincipal extends javax.swing.JFrame {
         mitemCerrarSesion = new javax.swing.JMenuItem();
         miSalir = new javax.swing.JMenuItem();
         jMenuMantenimiento = new javax.swing.JMenu();
-        miPersonal = new javax.swing.JMenuItem();
+        mClientes = new javax.swing.JMenu();
+        miAgregarCliente = new javax.swing.JMenuItem();
+        miUsuarios = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
@@ -47,7 +49,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
         miProductos = new javax.swing.JMenuItem();
-        miClientes = new javax.swing.JMenuItem();
+        jMenuItem10 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jmCliente = new javax.swing.JMenu();
@@ -67,7 +69,7 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jdpPantallaInicio.setBackground(new java.awt.Color(0, 102, 153));
+        jdpPantallaInicio.setBackground(new java.awt.Color(0, 18, 50));
 
         javax.swing.GroupLayout jdpPantallaInicioLayout = new javax.swing.GroupLayout(jdpPantallaInicio);
         jdpPantallaInicio.setLayout(jdpPantallaInicioLayout);
@@ -77,12 +79,14 @@ public class frmPrincipal extends javax.swing.JFrame {
         );
         jdpPantallaInicioLayout.setVerticalGroup(
             jdpPantallaInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 457, Short.MAX_VALUE)
+            .addGap(0, 488, Short.MAX_VALUE)
         );
 
         jMenuSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/exec.png"))); // NOI18N
         jMenuSesion.setText("Sesion");
+        jMenuSesion.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
+        mitemCerrarSesion.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         mitemCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrarSesion.png"))); // NOI18N
         mitemCerrarSesion.setText("Cerrar Sesion");
         mitemCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
@@ -92,6 +96,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         });
         jMenuSesion.add(mitemCerrarSesion);
 
+        miSalir.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         miSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/salir.png"))); // NOI18N
         miSalir.setText("Salir");
         miSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -105,14 +110,27 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jMenuMantenimiento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/agt_Utilities.png"))); // NOI18N
         jMenuMantenimiento.setText("Mantenimiento");
+        jMenuMantenimiento.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
-        miPersonal.setText("Personal");
-        miPersonal.addActionListener(new java.awt.event.ActionListener() {
+        mClientes.setText("Clientes");
+
+        miAgregarCliente.setText("Agregar cliente");
+        miAgregarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                miPersonalActionPerformed(evt);
+                miAgregarClienteActionPerformed(evt);
             }
         });
-        jMenuMantenimiento.add(miPersonal);
+        mClientes.add(miAgregarCliente);
+
+        jMenuMantenimiento.add(mClientes);
+
+        miUsuarios.setText("Usuarios");
+        miUsuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miUsuariosActionPerformed(evt);
+            }
+        });
+        jMenuMantenimiento.add(miUsuarios);
 
         jMenu2.setText("jMenu2");
 
@@ -146,17 +164,13 @@ public class frmPrincipal extends javax.swing.JFrame {
         miProductos.setText("Productos");
         jMenuMantenimiento.add(miProductos);
 
-        miClientes.setText("Clientes");
-        miClientes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                miClientesActionPerformed(evt);
-            }
-        });
-        jMenuMantenimiento.add(miClientes);
+        jMenuItem10.setText("jMenuItem10");
+        jMenuMantenimiento.add(jMenuItem10);
 
         jMenuBar1.add(jMenuMantenimiento);
 
         jMenu1.setText("Servicios");
+        jMenu1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
         jMenuItem2.setText("Registrar Servicio");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
@@ -169,6 +183,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jmCliente.setText("Cliente");
+        jmCliente.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
         jmiRegistrarCliente.setText("Registrar Cliente");
         jmiRegistrarCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -181,6 +196,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jmCliente);
 
         jmReportes.setText("Reportes");
+        jmReportes.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
         jmiRepClientes.setText("Clientes");
         jmReportes.add(jmiRepClientes);
@@ -202,9 +218,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jdpPantallaInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 31, Short.MAX_VALUE))
+            .addComponent(jdpPantallaInicio)
         );
 
         pack();
@@ -235,20 +249,21 @@ public class frmPrincipal extends javax.swing.JFrame {
         cliente.setVisible(true);
     }//GEN-LAST:event_jmiRegistrarClienteActionPerformed
 
-    private void miClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miClientesActionPerformed
+    private void miAgregarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAgregarClienteActionPerformed
         // TODO add your handling code here:
-        jifCliente cliente = new jifCliente();
+        pAgregarCliente cliente = new pAgregarCliente();
         jdpPantallaInicio.add(cliente);
         cliente.setVisible(true);
-    }//GEN-LAST:event_miClientesActionPerformed
+        
+    }//GEN-LAST:event_miAgregarClienteActionPerformed
 
-    private void miPersonalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miPersonalActionPerformed
+    private void miUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miUsuariosActionPerformed
         // TODO add your handling code here:
         pNuevoCliente nuevo = new pNuevoCliente();
         jdpPantallaInicio.add(nuevo);
         nuevo.setVisible(true);
 
-    }//GEN-LAST:event_miPersonalActionPerformed
+    }//GEN-LAST:event_miUsuariosActionPerformed
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
         // TODO add your handling code here:
@@ -269,7 +284,7 @@ public class frmPrincipal extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Metal".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -299,6 +314,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
@@ -315,10 +331,11 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jmiRegistrarCliente;
     private javax.swing.JMenuItem jmiRepClientes;
     private javax.swing.JMenuItem jmiRepUsuario;
-    private javax.swing.JMenuItem miClientes;
-    private javax.swing.JMenuItem miPersonal;
+    private javax.swing.JMenu mClientes;
+    private javax.swing.JMenuItem miAgregarCliente;
     private javax.swing.JMenuItem miProductos;
     private javax.swing.JMenuItem miSalir;
+    private javax.swing.JMenuItem miUsuarios;
     private javax.swing.JMenuItem mitemCerrarSesion;
     // End of variables declaration//GEN-END:variables
 }

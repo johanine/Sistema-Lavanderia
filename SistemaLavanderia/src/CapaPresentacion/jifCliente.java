@@ -5,7 +5,7 @@
  */
 package CapaPresentacion;
 
-import CapaPresentacion.Matenimientos.Ciente.pAgregarCliente;
+import CapaPresentacion.Mantenimientos.Clientes.pAgregarCliente;
 import java.awt.Component;
 
 /**

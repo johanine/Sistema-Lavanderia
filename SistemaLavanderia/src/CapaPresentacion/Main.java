@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
       
-     
+        
             FrmLogin OfmLogin = new FrmLogin();
 //            if (OfmLogin.ShowDialog() == DialogResult.OK)
 //                Application.Run(new frmPresentacion(OfmLogin.Cargo,OfmLogin.Usuario));
