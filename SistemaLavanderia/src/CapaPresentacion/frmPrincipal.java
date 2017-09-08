@@ -42,11 +42,6 @@ public class frmPrincipal extends javax.swing.JFrame {
         mitemCerrarSesion = new javax.swing.JMenuItem();
         miSalir = new javax.swing.JMenuItem();
         jMenuMantenimiento = new javax.swing.JMenu();
-        mClientes = new javax.swing.JMenu();
-        miAgregarCliente = new javax.swing.JMenuItem();
-        miModificarCliente = new javax.swing.JMenuItem();
-        miBuscar = new javax.swing.JMenuItem();
-        miListarClientes = new javax.swing.JMenuItem();
         miUsuarios = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem9 = new javax.swing.JMenuItem();
@@ -115,38 +110,6 @@ public class frmPrincipal extends javax.swing.JFrame {
         jMenuMantenimiento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/agt_Utilities.png"))); // NOI18N
         jMenuMantenimiento.setText("Mantenimiento");
         jMenuMantenimiento.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
-
-        mClientes.setText("Clientes");
-        mClientes.setFont(new java.awt.Font("Segoe UI Light", 0, 16)); // NOI18N
-
-        miAgregarCliente.setText("Agregar cliente");
-        miAgregarCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                miAgregarClienteActionPerformed(evt);
-            }
-        });
-        mClientes.add(miAgregarCliente);
-
-        miModificarCliente.setText("Modificar");
-        miModificarCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                miModificarClienteActionPerformed(evt);
-            }
-        });
-        mClientes.add(miModificarCliente);
-
-        miBuscar.setText("Buscar");
-        miBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                miBuscarActionPerformed(evt);
-            }
-        });
-        mClientes.add(miBuscar);
-
-        miListarClientes.setText("Listar clientes");
-        mClientes.add(miListarClientes);
-
-        jMenuMantenimiento.add(mClientes);
 
         miUsuarios.setText("Usuarios");
         miUsuarios.addActionListener(new java.awt.event.ActionListener() {
@@ -254,19 +217,6 @@ public class frmPrincipal extends javax.swing.JFrame {
        this.dispose();
     }//GEN-LAST:event_miSalirActionPerformed
 
-    private void miAgregarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAgregarClienteActionPerformed
-        // TODO add your handling code here:
-        pAgregarCliente cliente = new pAgregarCliente();
-        jdpPantallaInicio.add(cliente);
-        try {
-            cliente.setVisible(true);
-            cliente.setMaximum(true);
-        } catch (PropertyVetoException ex) {
-            Logger.getLogger(frmPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-    }//GEN-LAST:event_miAgregarClienteActionPerformed
-
     private void miUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miUsuariosActionPerformed
         // TODO add your handling code here:
         pAgregarCliente nuevo = new pAgregarCliente();
@@ -282,16 +232,6 @@ public class frmPrincipal extends javax.swing.JFrame {
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         
     }//GEN-LAST:event_jMenuItem5ActionPerformed
-
-    private void miModificarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miModificarClienteActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_miModificarClienteActionPerformed
-
-    private void miBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miBuscarActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_miBuscarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -349,11 +289,6 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jmReportes;
     private javax.swing.JMenuItem jmiRepClientes;
     private javax.swing.JMenuItem jmiRepUsuario;
-    private javax.swing.JMenu mClientes;
-    private javax.swing.JMenuItem miAgregarCliente;
-    private javax.swing.JMenuItem miBuscar;
-    private javax.swing.JMenuItem miListarClientes;
-    private javax.swing.JMenuItem miModificarCliente;
     private javax.swing.JMenuItem miProductos;
     private javax.swing.JMenuItem miSalir;
     private javax.swing.JMenuItem miUsuarios;
