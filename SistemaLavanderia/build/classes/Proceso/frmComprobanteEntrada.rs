@@ -1,0 +1,2 @@
+CapaPresentacion.Proceso.frmComprobanteEntrada
+CapaPresentacion.Proceso.frmComprobanteEntrada$1

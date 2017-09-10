@@ -5,7 +5,8 @@
  */
 package CapaPresentacion;
 
-import CapaPresentacion.Matenimientos.Ciente.pAgregarCliente;
+import CapaPresentacion.Mantenimientos.Cliente.*;
+import CapaPresentacion.Mantenimientos.ClienteJuridico.*;
 import CapaPresentacion.*;
 /**
  *
@@ -16,8 +17,12 @@ public class frmPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form frmPrincipal
      */
+    int w;// = jdpPantallaInicio.getWidth();
+        int h;// = jdpPantallaInicio.getHeight();
     public frmPrincipal() {
         initComponents();
+         w = jdpPantallaInicio.getWidth();
+         h = jdpPantallaInicio.getHeight();
     }
 
     /**
@@ -47,11 +52,20 @@ public class frmPrincipal extends javax.swing.JFrame {
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
         miProductos = new javax.swing.JMenuItem();
-        miClientes = new javax.swing.JMenuItem();
+        itemCliente = new javax.swing.JMenu();
+        itemNuevoCliente = new javax.swing.JMenuItem();
+        itemModificarCliente = new javax.swing.JMenuItem();
+        itemMostrarCliente = new javax.swing.JMenuItem();
+        itemDeshabilitarCliente = new javax.swing.JMenuItem();
+        itemBuscarCliente = new javax.swing.JMenuItem();
+        itemClienteJuridico = new javax.swing.JMenu();
+        itemNuevoClienteJuridico = new javax.swing.JMenuItem();
+        itemModificarClienteJuridico = new javax.swing.JMenuItem();
+        itemMostrarClientesJuridicos = new javax.swing.JMenuItem();
+        itemDeshabilitarCliente1 = new javax.swing.JMenuItem();
+        itemBuscarClienteJuridico = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jmCliente = new javax.swing.JMenu();
-        jmiRegistrarCliente = new javax.swing.JMenuItem();
         jmReportes = new javax.swing.JMenu();
         jmiRepClientes = new javax.swing.JMenuItem();
         jmiRepUsuario = new javax.swing.JMenuItem();
@@ -73,11 +87,11 @@ public class frmPrincipal extends javax.swing.JFrame {
         jdpPantallaInicio.setLayout(jdpPantallaInicioLayout);
         jdpPantallaInicioLayout.setHorizontalGroup(
             jdpPantallaInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 936, Short.MAX_VALUE)
+            .addGap(0, 946, Short.MAX_VALUE)
         );
         jdpPantallaInicioLayout.setVerticalGroup(
             jdpPantallaInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 457, Short.MAX_VALUE)
+            .addGap(0, 488, Short.MAX_VALUE)
         );
 
         jMenuSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/exec.png"))); // NOI18N
@@ -146,13 +160,93 @@ public class frmPrincipal extends javax.swing.JFrame {
         miProductos.setText("Productos");
         jMenuMantenimiento.add(miProductos);
 
-        miClientes.setText("Clientes");
-        miClientes.addActionListener(new java.awt.event.ActionListener() {
+        itemCliente.setText("Cliente");
+
+        itemNuevoCliente.setText("Nuevo Cliente");
+        itemNuevoCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                miClientesActionPerformed(evt);
+                itemNuevoClienteActionPerformed(evt);
             }
         });
-        jMenuMantenimiento.add(miClientes);
+        itemCliente.add(itemNuevoCliente);
+
+        itemModificarCliente.setText("Modificar Cliente");
+        itemModificarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemModificarClienteActionPerformed(evt);
+            }
+        });
+        itemCliente.add(itemModificarCliente);
+
+        itemMostrarCliente.setText("Mostrar Clientes");
+        itemMostrarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemMostrarClienteActionPerformed(evt);
+            }
+        });
+        itemCliente.add(itemMostrarCliente);
+
+        itemDeshabilitarCliente.setText("Deshabilitar Cliente");
+        itemDeshabilitarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemDeshabilitarClienteActionPerformed(evt);
+            }
+        });
+        itemCliente.add(itemDeshabilitarCliente);
+
+        itemBuscarCliente.setText("Buscar Cliente");
+        itemBuscarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemBuscarClienteActionPerformed(evt);
+            }
+        });
+        itemCliente.add(itemBuscarCliente);
+
+        jMenuMantenimiento.add(itemCliente);
+
+        itemClienteJuridico.setText("Cliente Jurídico");
+
+        itemNuevoClienteJuridico.setText("Nuevo Cliente Jurídico");
+        itemNuevoClienteJuridico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemNuevoClienteJuridicoActionPerformed(evt);
+            }
+        });
+        itemClienteJuridico.add(itemNuevoClienteJuridico);
+
+        itemModificarClienteJuridico.setText("Modificar Cliente Jurídico");
+        itemModificarClienteJuridico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemModificarClienteJuridicoActionPerformed(evt);
+            }
+        });
+        itemClienteJuridico.add(itemModificarClienteJuridico);
+
+        itemMostrarClientesJuridicos.setText("Mostrar Clientes Jurídico");
+        itemMostrarClientesJuridicos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemMostrarClientesJuridicosActionPerformed(evt);
+            }
+        });
+        itemClienteJuridico.add(itemMostrarClientesJuridicos);
+
+        itemDeshabilitarCliente1.setText("Deshabilitar Cliente Jurídico");
+        itemDeshabilitarCliente1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemDeshabilitarCliente1ActionPerformed(evt);
+            }
+        });
+        itemClienteJuridico.add(itemDeshabilitarCliente1);
+
+        itemBuscarClienteJuridico.setText("Buscar Cliente Jurídico");
+        itemBuscarClienteJuridico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemBuscarClienteJuridicoActionPerformed(evt);
+            }
+        });
+        itemClienteJuridico.add(itemBuscarClienteJuridico);
+
+        jMenuMantenimiento.add(itemClienteJuridico);
 
         jMenuBar1.add(jMenuMantenimiento);
 
@@ -167,18 +261,6 @@ public class frmPrincipal extends javax.swing.JFrame {
         jMenu1.add(jMenuItem2);
 
         jMenuBar1.add(jMenu1);
-
-        jmCliente.setText("Cliente");
-
-        jmiRegistrarCliente.setText("Registrar Cliente");
-        jmiRegistrarCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmiRegistrarClienteActionPerformed(evt);
-            }
-        });
-        jmCliente.add(jmiRegistrarCliente);
-
-        jMenuBar1.add(jmCliente);
 
         jmReportes.setText("Reportes");
 
@@ -196,15 +278,11 @@ public class frmPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jdpPantallaInicio)
-                .addContainerGap())
+            .addComponent(jdpPantallaInicio)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jdpPantallaInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 31, Short.MAX_VALUE))
+            .addComponent(jdpPantallaInicio)
         );
 
         pack();
@@ -228,19 +306,13 @@ public class frmPrincipal extends javax.swing.JFrame {
        this.dispose();
     }//GEN-LAST:event_miSalirActionPerformed
 
-    private void jmiRegistrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiRegistrarClienteActionPerformed
+    private void itemNuevoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemNuevoClienteActionPerformed
         // TODO add your handling code here:
-        pAgregarCliente cliente = new pAgregarCliente();
-        jdpPantallaInicio.add(cliente);
-        cliente.setVisible(true);
-    }//GEN-LAST:event_jmiRegistrarClienteActionPerformed
-
-    private void miClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miClientesActionPerformed
-        // TODO add your handling code here:
-        jifCliente cliente = new jifCliente();
-        jdpPantallaInicio.add(cliente);
-        cliente.setVisible(true);
-    }//GEN-LAST:event_miClientesActionPerformed
+        iNuevoCliente inc = new iNuevoCliente();
+        jdpPantallaInicio.add(inc);
+        inc.setVisible(true);
+        inc.setSize(w, h);
+    }//GEN-LAST:event_itemNuevoClienteActionPerformed
 
     private void miPersonalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miPersonalActionPerformed
         // TODO add your handling code here:
@@ -257,6 +329,63 @@ public class frmPrincipal extends javax.swing.JFrame {
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         
     }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void itemModificarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemModificarClienteActionPerformed
+        // TODO add your handling code here:
+        iModificarCliente inc = new iModificarCliente();
+        jdpPantallaInicio.add(inc);
+        inc.setVisible(true);
+    }//GEN-LAST:event_itemModificarClienteActionPerformed
+
+    private void itemMostrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemMostrarClienteActionPerformed
+        // TODO add your handling code here:
+        iMostrarClientes inc = new iMostrarClientes();
+        jdpPantallaInicio.add(inc);
+        inc.setVisible(true);
+    }//GEN-LAST:event_itemMostrarClienteActionPerformed
+
+    private void itemDeshabilitarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemDeshabilitarClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itemDeshabilitarClienteActionPerformed
+
+    private void itemNuevoClienteJuridicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemNuevoClienteJuridicoActionPerformed
+        // TODO add your handling code here:
+        iNuevoClienteJuridico inc = new iNuevoClienteJuridico();
+        jdpPantallaInicio.add(inc);
+        inc.setVisible(true);
+    }//GEN-LAST:event_itemNuevoClienteJuridicoActionPerformed
+
+    private void itemModificarClienteJuridicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemModificarClienteJuridicoActionPerformed
+        // TODO add your handling code here:
+        iModificarClienteJuridico inc = new iModificarClienteJuridico();
+        jdpPantallaInicio.add(inc);
+        inc.setVisible(true);
+    }//GEN-LAST:event_itemModificarClienteJuridicoActionPerformed
+
+    private void itemMostrarClientesJuridicosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemMostrarClientesJuridicosActionPerformed
+        // TODO add your handling code here:
+        iMostrarClientesJuridicos inc = new iMostrarClientesJuridicos();
+        jdpPantallaInicio.add(inc);
+        inc.setVisible(true);
+    }//GEN-LAST:event_itemMostrarClientesJuridicosActionPerformed
+
+    private void itemDeshabilitarCliente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemDeshabilitarCliente1ActionPerformed
+        // TODO add your handling code here:
+        iDeshabilitarClienteJuridico inc = new iDeshabilitarClienteJuridico();
+        jdpPantallaInicio.add(inc);
+        inc.setVisible(true);
+    }//GEN-LAST:event_itemDeshabilitarCliente1ActionPerformed
+
+    private void itemBuscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemBuscarClienteActionPerformed
+        // TODO add your handling code here:
+        iBuscarCliente inc = new iBuscarCliente();
+        jdpPantallaInicio.add(inc);
+        inc.setVisible(true);
+    }//GEN-LAST:event_itemBuscarClienteActionPerformed
+
+    private void itemBuscarClienteJuridicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemBuscarClienteJuridicoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itemBuscarClienteJuridicoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -294,6 +423,18 @@ public class frmPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem itemBuscarCliente;
+    private javax.swing.JMenuItem itemBuscarClienteJuridico;
+    private javax.swing.JMenu itemCliente;
+    private javax.swing.JMenu itemClienteJuridico;
+    private javax.swing.JMenuItem itemDeshabilitarCliente;
+    private javax.swing.JMenuItem itemDeshabilitarCliente1;
+    private javax.swing.JMenuItem itemModificarCliente;
+    private javax.swing.JMenuItem itemModificarClienteJuridico;
+    private javax.swing.JMenuItem itemMostrarCliente;
+    private javax.swing.JMenuItem itemMostrarClientesJuridicos;
+    private javax.swing.JMenuItem itemNuevoCliente;
+    private javax.swing.JMenuItem itemNuevoClienteJuridico;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
@@ -310,12 +451,9 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuMantenimiento;
     private javax.swing.JMenu jMenuSesion;
     private javax.swing.JDesktopPane jdpPantallaInicio;
-    private javax.swing.JMenu jmCliente;
     private javax.swing.JMenu jmReportes;
-    private javax.swing.JMenuItem jmiRegistrarCliente;
     private javax.swing.JMenuItem jmiRepClientes;
     private javax.swing.JMenuItem jmiRepUsuario;
-    private javax.swing.JMenuItem miClientes;
     private javax.swing.JMenuItem miPersonal;
     private javax.swing.JMenuItem miProductos;
     private javax.swing.JMenuItem miSalir;

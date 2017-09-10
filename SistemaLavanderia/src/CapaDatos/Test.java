@@ -13,10 +13,10 @@ import java.sql.SQLException;
  */
 public class Test {
     public static void main(String[] args) throws SQLException {
-        
+        /**
         CEntidadMySQL conexion = new CEntidadMySQL("dblavanderia", "localhost", "root", "", "tusuario");
         conexion.ConectarSQL();
         conexion.EjecutarProcedimiento("spuListarUsuario", null);
-        //conexion.EjecutarProcedimiento("verificar", datos);
+        //conexion.EjecutarProcedimiento("verificar", datos);**/
     }
 }

@@ -161,11 +161,11 @@ public class jifCliente extends javax.swing.JInternalFrame {
         
             pAgregarCliente nuevo= new pAgregarCliente();
             
-            frmPrincipal.jdpPantallaInicio.add(nuevo);
+   /**         frmPrincipal.jdpPantallaInicio.add(nuevo);
             nuevo.toFront();
             nuevo.setVisible(true);
             this.dispose();
-
+**/
        
 
     }//GEN-LAST:event_BtnregistrarActionPerformed

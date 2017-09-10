@@ -1,0 +1,2 @@
+CapaPresentacion.Reportes.frmReporteFactura
+CapaPresentacion.Reportes.frmReporteFactura$1

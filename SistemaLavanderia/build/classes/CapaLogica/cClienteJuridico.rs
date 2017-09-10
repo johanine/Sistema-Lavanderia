@@ -1,1 +1,0 @@
-capalogica.cClienteJuridico

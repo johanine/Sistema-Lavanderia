@@ -27,7 +27,8 @@ public class cUsuario {
     public cDatos oDatos;
     public String mensaje;
     public cUsuario(){
-        oDatos=  new cDatos("localhost","dblavanderia","root","12345");
+        oDatos=  new cDatos("localhost","dblavanderia","root","");
+        oDatos.setNombreTabla("tusuario");
     }
     public boolean insertar() throws ClassNotFoundException, SQLException
     {
@@ -47,7 +48,7 @@ public class cUsuario {
         int CodError = Integer.parseInt(oFila.getString("CodError"));
         mensaje = oFila.getString("Mensaje");
         oDatos.Desconectar();
-        if (CodError == 0)
+        if (CodError == 1)
             return true;
         else
             return false;

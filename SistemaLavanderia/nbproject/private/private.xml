@@ -3,13 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Luis%20Angel/Documents/GitHub/SistemaLavanderiaLab5/Sistema%20Lavanderia/SistemaLavanderia/src/CapaPresentacion/Mantenimientos/Usuarios/frmModificarUsuario.java</file>
-            <file>file:/C:/Users/Luis%20Angel/Documents/GitHub/SistemaLavanderiaLab5/Sistema%20Lavanderia/SistemaLavanderia/src/CapaLogica/cUsuario.java</file>
-            <file>file:/C:/Users/Luis%20Angel/Documents/GitHub/SistemaLavanderiaLab5/Sistema%20Lavanderia/SistemaLavanderia/src/CapaPresentacion/frmPrincipal.java</file>
-            <file>file:/C:/Users/Luis%20Angel/Documents/GitHub/SistemaLavanderiaLab5/Sistema%20Lavanderia/SistemaLavanderia/src/CapaDatos/cConexion.java</file>
-            <file>file:/C:/Users/Luis%20Angel/Documents/GitHub/SistemaLavanderiaLab5/Sistema%20Lavanderia/SistemaLavanderia/src/CapaPresentacion/FrmLogin.java</file>
-            <file>file:/C:/Users/Luis%20Angel/Documents/GitHub/SistemaLavanderiaLab5/Sistema%20Lavanderia/SistemaLavanderia/src/CapaPresentacion/Matenimientos/Ciente/pAgregarCliente.java</file>
-            <file>file:/C:/Users/Luis%20Angel/Documents/GitHub/SistemaLavanderiaLab5/Sistema%20Lavanderia/SistemaLavanderia/src/CapaDatos/cDatos.java</file>
+            <file>file:/C:/Users/joha/Documents/GitHub/Sistema-Lavanderia/SistemaLavanderia/src/CapaPresentacion/Mantenimientos/Cliente/iNuevoCliente1.java</file>
+            <file>file:/C:/Users/joha/Documents/GitHub/Sistema-Lavanderia/SistemaLavanderia/src/CapaLogica/cCliente.java</file>
+            <file>file:/C:/Users/joha/Documents/GitHub/Sistema-Lavanderia/SistemaLavanderia/src/CapaLogica/cUsuario.java</file>
+            <file>file:/C:/Users/joha/Documents/GitHub/Sistema-Lavanderia/SistemaLavanderia/src/CapaPresentacion/Mantenimientos/Cliente/iNuevoCliente.java</file>
+            <file>file:/C:/Users/joha/Documents/GitHub/Sistema-Lavanderia/SistemaLavanderia/src/CapaPresentacion/Mantenimientos/Cliente/iDeshabilitarCliente.java</file>
+            <file>file:/C:/Users/joha/Documents/GitHub/Sistema-Lavanderia/SistemaLavanderia/src/CapaPresentacion/frmPrincipal.java</file>
+            <file>file:/C:/Users/joha/Documents/GitHub/Sistema-Lavanderia/SistemaLavanderia/src/CapaPresentacion/FrmLogin.java</file>
         </group>
     </open-files>
 </project-private>
