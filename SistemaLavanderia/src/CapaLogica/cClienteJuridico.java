@@ -23,6 +23,8 @@ public class cClienteJuridico {
     }
 
     public cClienteJuridico() {
+        oDatos= new cDatos("localhost", "dblavanderia", "root", "");
+        //oDatos.setNombreTabla("tcliente_juridico");
         if(!oDatos.getConectadoBD()){
             oDatos.Conectar();
         }
