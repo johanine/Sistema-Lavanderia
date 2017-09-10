@@ -5,7 +5,7 @@
  */
 package CapaLogica;
 
-import CapaDatos.cDatos;
+import CapaDatos.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -27,7 +27,8 @@ public class cUsuario {
     public cDatos oDatos;
     public String mensaje;
     public cUsuario(){
-        oDatos=  new cDatos("localhost","dblavanderia","root","12345");
+        oDatos=  new cDatos();
+        oDatos.Conectar();
     }
     public boolean insertar() throws ClassNotFoundException, SQLException
     {
@@ -41,12 +42,10 @@ public class cUsuario {
         lis.add(Contrasenia);
         lis.add(Correo);
         lis.add(Usuario);
-        oDatos.Conectar();
         ResultSet oFila=oDatos.llamarProcedimiento("spuInsertarUsuario",lis);
         oFila.next();
         int CodError = Integer.parseInt(oFila.getString("CodError"));
         mensaje = oFila.getString("Mensaje");
-        oDatos.Desconectar();
         if (CodError == 0)
             return true;
         else
@@ -65,7 +64,6 @@ public class cUsuario {
             oFila.next();
             int CodError = Integer.parseInt(oFila.getString("CodError"));
             mensaje = oFila.getString("Mensaje");
-            //oDatos.Desconectar();
             if (CodError == 1)
                 return true;
             else{
@@ -83,7 +81,6 @@ public class cUsuario {
         ArrayList<Object> lis=new ArrayList<>();
         lis.add(Usuario);
         lis.add(Contrasenia);
-        //oDatos.Conectar();
         if(!oDatos.getConectadoBD()){
             oDatos.Conectar();
         }
@@ -91,7 +88,6 @@ public class cUsuario {
         oFila.next();
         int CodError = Integer.parseInt(oFila.getString("CodError"));
         mensaje = oFila.getString("Mensaje");
-        //oDatos.Desconectar();
         if (CodError == 1)
             return true;
         else
@@ -107,9 +103,7 @@ public class cUsuario {
             if(!oDatos.getConectadoBD()){
                 oDatos.Conectar();
             }
-        //oDatos.Conectar();
             ResultSet rs=oDatos.llamarProcedimiento("spuListarUsuario",null);
-        //oDatos.Desconectar();
             return rs;
         }catch(Exception e){
             new Exception("Error al listar usuarios.\nDetalle: "+e);
@@ -122,9 +116,7 @@ public class cUsuario {
             if(!oDatos.getConectadoBD()){
                 oDatos.Conectar();
             }
-        //oDatos.Conectar();
         ResultSet rs=oDatos.llamarProcedimiento("spuListarUsuarioEspecial",null);
-        //oDatos.Desconectar();
         return rs;
         }catch(Exception e){
             new Exception("Error al listar usuarios especiales.\nDetalle: "+e);
@@ -139,10 +131,8 @@ public class cUsuario {
         lis.add(Contenido);  
         if(!oDatos.getConectadoBD()){
                 oDatos.Conectar();
-            }
-        //oDatos.Conectar();
+            };
         ResultSet rs=oDatos.llamarProcedimiento("spuBuscarUsuario",lis);
-        //oDatos.Desconectar();
         return rs;
         }catch(Exception e){
             new Exception("Error al buscar usuarios especiales.\nDetalle: "+e);
@@ -154,7 +144,6 @@ public class cUsuario {
         try{
         ArrayList<Object> lis=new ArrayList<>();
         lis.add(Usuario);
-        //oDatos.Conectar();
         if(!oDatos.getConectadoBD()){
                 oDatos.Conectar();
             }
@@ -162,8 +151,7 @@ public class cUsuario {
         oFila.next();
         int CodError = Integer.parseInt(oFila.getString("CodError"));
         mensaje = oFila.getString("Mensaje");
-        //oDatos.Desconectar();
-        if (CodError == 0)
+        if (CodError == 1)
             return true;
         else
             return false;
@@ -188,8 +176,7 @@ public class cUsuario {
         oFila.next();
         int CodError = Integer.parseInt(oFila.getString("CodError"));
         mensaje = oFila.getString("Mensaje");
-        //oDatos.Desconectar();
-        if (CodError == 0)
+        if (CodError == 1)
             return true;
         else
             return false;
@@ -205,11 +192,9 @@ public class cUsuario {
         if(!oDatos.getConectadoBD()){
                 oDatos.Conectar();
         }
-        //oDatos.Conectar();
         ResultSet rs=oDatos.llamarProcedimiento("spuDevolverCargo", lis);
         rs.next();
         String Cargo=rs.getString("Cargo");
-        //oDatos.Desconectar();
         return Cargo;
         }catch(Exception e){
             new Exception("Error al devolver cargo de  usuario.\nDetalle: "+e);
@@ -229,8 +214,7 @@ public class cUsuario {
         oFila.next();
         int CodError = Integer.parseInt(oFila.getString("CodError"));
         mensaje = oFila.getString("Mensaje");
-        //oDatos.Desconectar();
-        if (CodError == 0)
+        if (CodError == 1)
             return true;
         else
             return false;

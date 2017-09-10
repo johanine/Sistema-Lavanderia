@@ -3,6 +3,7 @@ package capalogica;
 
 import java.sql.ResultSet;
 import CapaDatos.*;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class cCompraDetalle {
@@ -11,11 +12,11 @@ public class cCompraDetalle {
     public int IdProducto ;
     public String DocSalida ;
     public int Cantidad ;
-    CEntidadMySQL oDatos;
+    cConexion oDatos;
     public String mensaje;
     //constructor
     public cCompraDetalle(){
-        oDatos= new CEntidadMySQL("dblavanderia", "localhost", "root", "", "TComprobante_Detalle");
+        oDatos= new cDatos("dblavanderia", "localhost", "root", "", "TComprobante_Detalle");
     }
     public boolean insertar()
     {
@@ -25,11 +26,11 @@ public class cCompraDetalle {
         datosEnvio.add(IdProducto);
         datosEnvio.add(DocSalida);
         try {
-        ResultSet oFila = oDatos.llamarProcedimiento("spuInsertarCompraDetalle",datosEnvio);
+            ResultSet oFila = oDatos.llamarProcedimiento("spuInsertarCompraDetalle",datosEnvio);
             oFila.next();
             int CodError = oFila.getInt("CodError");
             mensaje = oFila.getString("Mensaje");
-            if (CodError == 0)
+            if (CodError == 1)
                 return true;
             else
                 return false;
@@ -53,44 +54,57 @@ public class cCompraDetalle {
     {
         try{
             ArrayList<Object> datosEnvio = new ArrayList<Object>();
-        datosEnvio.add(doc);
-        return oDatos.llamarProcedimiento("spuListarCompraDetalle",datosEnvio);
+            datosEnvio.add(doc);
+            return oDatos.llamarProcedimiento("spuListarCompraDetalle",datosEnvio);
         } catch (Exception e) {
             System.out.println("Error insertar en cCompraDetalle");
             System.out.println(e);
             return null;
         }
     }
-    /*public DataTable ListarEmpleado()
+    public ResultSet ListarEmpleado() throws SQLException
     {
-        return oDatos.TraerDataTable("spuListarCompraDetalleHabilitado");
+        return oDatos.llamarProcedimiento("spuListarCompraDetalleHabilitado",null);
     }
-    public DataTable Buscar(string Campo, string Contenido)
+    public ResultSet Buscar(String Campo, String Contenido) throws SQLException
     {
-        return oDatos.TraerDataTable("spuBuscarCompraDetalle", Campo, Contenido);
+        ArrayList<Object> datosEnvio = new ArrayList<>();
+        datosEnvio.add(Campo);
+        datosEnvio.add(Contenido);
+        return oDatos.llamarProcedimiento("spuBuscarCompraDetalle", datosEnvio);
     }
-    public bool modificar()
+    public boolean modificar() throws SQLException
     {
-        DataRow oFila = oDatos.TraerDataRow("spuModificarCompraDetalle", IdCompraDetalle,  DNI,Nombres, Apellidos, Telefono,  Direccion);
-        int CodError = int.Parse(oFila["CodError"].ToString());
-        mensaje = oFila["Mensaje"].ToString();
-        if (CodError == 0)
+        ArrayList<Object> datosEnvio = new ArrayList<>();
+        datosEnvio.add(IdComDetalle);
+        datosEnvio.add(PrecioUnitario);
+        datosEnvio.add(IdProducto);
+        datosEnvio.add(DocSalida);
+        datosEnvio.add(Cantidad);
+        ResultSet oFila = oDatos.llamarProcedimiento("spuModificarCompraDetalle", datosEnvio);
+        oFila.next();
+        int CodError = Integer.parseInt(oFila.getString("CodError"));
+        mensaje = oFila.getString("Mensaje");
+        if (CodError == 1)
             return true;
         else
             return false;
     }
-    public bool deshabilitar()
+    public boolean deshabilitar() throws SQLException
     {
-        DataRow oFila = oDatos.TraerDataRow("spuDeshabilitarCompraDetalle", IdCompraDetalle);
-        int CodError = int.Parse(oFila["CodError"].ToString());
-        mensaje = oFila["Mensaje"].ToString();
-        if (CodError == 0)
+        ArrayList<Object> lis=new ArrayList<>();
+        lis.add(IdComDetalle);
+        ResultSet oFila = oDatos.llamarProcedimiento("spuDeshabilitarCompraDetalle", lis);
+        oFila.next();
+        int CodError = Integer.parseInt(oFila.getString("CodError"));
+        mensaje = oFila.getString("Mensaje");
+        if (CodError == 1)
             return true;
         else
             return false;
     }
-    public string generarCodigo()
+    public String generarCodigo() throws SQLException
     {
-        return oDatos.TraerValor("spuGenerarCodigoCompraDetalle").ToString();
-    }*/
+        return oDatos.llamarProcedimiento("spuGenerarCodigoCompraDetalle",null).getString("Codigo");
+    }
 }

@@ -28,7 +28,14 @@ public class cConexion {
     protected boolean aConectadoBD;
     protected boolean aExisteBD;
     //private String aBDPadre="mysql";
-    
+    public cConexion()
+    {
+        aNomClase = "com.mysql.jdbc.Driver";
+        setNombreBD("dblavanderia");
+        setServidor("localhost:3306");
+        setUsuario("root");
+        setContrasenia("123456");
+    }
     public cConexion(String pHost, String pNombreBD,String pUsuario, String pContrasenia){
         aNomClase = "com.mysql.jdbc.Driver";
         setNombreBD(pNombreBD);

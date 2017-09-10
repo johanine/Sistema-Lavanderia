@@ -33,6 +33,10 @@ public class cDatos extends cConexion{
     protected boolean aValoresCargados=false;
     protected String aConsulta;
    
+    public cDatos()
+    {
+        super();
+    }
     public cDatos(String pHost,String pNombreBD,String pUsuario,String pContrasenia) {
         super(pHost,pNombreBD, pUsuario, pContrasenia);
     }

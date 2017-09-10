@@ -1,0 +1,2 @@
+CapaPresentacion.Reportes.frmReportePrenda
+CapaPresentacion.Reportes.frmReportePrenda$1
