@@ -27,7 +27,7 @@ public class cUsuario {
     public cDatos oDatos;
     public String mensaje;
     public cUsuario(){
-        oDatos=  new cDatos("localhost","dblavanderia","root","12345");
+        oDatos=  new cDatos("localhost","dblavanderia","root","");
     }
     public boolean insertar() throws ClassNotFoundException, SQLException
     {
