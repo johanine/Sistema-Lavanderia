@@ -90,3 +90,15 @@ create table TComprobante_Compra_Detalle(
 	foreign key(DocSalida) references TComprobante_Compra
 )ENGINE=MyISAM;
 
+create table TPrenda(
+	IdPrenda int AUTO_INCREMENT,
+	Descripcion varchar(100),
+    Habilitado bit,
+	primary key ( IdPrenda)
+);	
+create table TProducto(
+	IdProducto int AUTO_INCREMENT,
+	Descripcion varchar(100),
+	primary key ( IdProducto)
+)
+
