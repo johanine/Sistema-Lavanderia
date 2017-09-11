@@ -5,9 +5,19 @@
  */
 package CapaPresentacion;
 
+import CapaLogica.cUtilitarios;
+import CapaPresentacion.Mantenimientos.Usuarios.*;
 import CapaPresentacion.Mantenimientos.Clientes.pAgregarCliente;
+<<<<<<< HEAD
+import CapaPresentacion.Mantenimientos.Usuarios.ifrmMostrarUsuario;
+import CapaPresentacion.Mantenimientos.Usuarios.ifrmNuevoUsuario;
+=======
 import CapaPresentacion.*;
+import CapaPresentacion.Mantenimientos.Cliente.*;
+import CapaPresentacion.Mantenimientos.ClienteJuridico.*;
+>>>>>>> 44d44096935b546065a87f7ad06cd200e9c83f90
 import java.beans.PropertyVetoException;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 /**
@@ -42,10 +52,26 @@ public class frmPrincipal extends javax.swing.JFrame {
         mitemCerrarSesion = new javax.swing.JMenuItem();
         miSalir = new javax.swing.JMenuItem();
         jMenuMantenimiento = new javax.swing.JMenu();
-        miUsuarios = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem9 = new javax.swing.JMenuItem();
+<<<<<<< HEAD
+        itmNuevoUsuario = new javax.swing.JMenuItem();
+        itmListarUsuarios = new javax.swing.JMenuItem();
+        jMenuItem15 = new javax.swing.JMenuItem();
+=======
+        itemNuevoCliente = new javax.swing.JMenuItem();
+        itemModificarCliente = new javax.swing.JMenuItem();
+        itemBuscarCliente = new javax.swing.JMenuItem();
+        itemDeshabilitarCliente = new javax.swing.JMenuItem();
+        itemMostrarClientes = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        itemNuevoClienteJuridico = new javax.swing.JMenuItem();
+        itemModificarCliente1 = new javax.swing.JMenuItem();
+        itemBuscarCliente1 = new javax.swing.JMenuItem();
+        jMenuItem14 = new javax.swing.JMenuItem();
+        itemMostrarClientes1 = new javax.swing.JMenuItem();
+>>>>>>> 44d44096935b546065a87f7ad06cd200e9c83f90
         jMenuItem5 = new javax.swing.JMenuItem();
+        miUsuarios = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
@@ -111,21 +137,135 @@ public class frmPrincipal extends javax.swing.JFrame {
         jMenuMantenimiento.setText("Mantenimiento");
         jMenuMantenimiento.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
-        miUsuarios.setText("Usuarios");
-        miUsuarios.addActionListener(new java.awt.event.ActionListener() {
+        jMenu2.setBackground(new java.awt.Color(153, 204, 255));
+        jMenu2.setText("Usuarios");
+        jMenu2.setOpaque(true);
+
+        itmNuevoUsuario.setText("Nuevo");
+        itmNuevoUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                miUsuariosActionPerformed(evt);
+                itmNuevoUsuarioActionPerformed(evt);
             }
         });
-        jMenuMantenimiento.add(miUsuarios);
+        jMenu2.add(itmNuevoUsuario);
 
-        jMenu2.setText("jMenu2");
+<<<<<<< HEAD
+        itmListarUsuarios.setText("Listar Usuarios");
+        itmListarUsuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmListarUsuariosActionPerformed(evt);
+            }
+        });
+        jMenu2.add(itmListarUsuarios);
+
+        jMenuItem15.setText("Modificar Usuario");
+        jMenuItem15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem15ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem15);
+=======
+        jMenu2.setText("Cliente");
         jMenu2.setFont(new java.awt.Font("Segoe UI Light", 0, 16)); // NOI18N
 
-        jMenuItem9.setText("jMenuItem9");
-        jMenu2.add(jMenuItem9);
+        itemNuevoCliente.setFont(new java.awt.Font("Segoe UI Light", 0, 16)); // NOI18N
+        itemNuevoCliente.setText("Nuevo Cliente");
+        itemNuevoCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemNuevoClienteActionPerformed(evt);
+            }
+        });
+        jMenu2.add(itemNuevoCliente);
+
+        itemModificarCliente.setFont(new java.awt.Font("Segoe UI Light", 0, 16)); // NOI18N
+        itemModificarCliente.setText("Modificar Cliente");
+        itemModificarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemModificarClienteActionPerformed(evt);
+            }
+        });
+        jMenu2.add(itemModificarCliente);
+
+        itemBuscarCliente.setFont(new java.awt.Font("Segoe UI Light", 0, 16)); // NOI18N
+        itemBuscarCliente.setText("Buscar Cliente");
+        itemBuscarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemBuscarClienteActionPerformed(evt);
+            }
+        });
+        jMenu2.add(itemBuscarCliente);
+
+        itemDeshabilitarCliente.setFont(new java.awt.Font("Segoe UI Light", 0, 16)); // NOI18N
+        itemDeshabilitarCliente.setText("Deshabilitar Cliente");
+        itemDeshabilitarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemDeshabilitarClienteActionPerformed(evt);
+            }
+        });
+        jMenu2.add(itemDeshabilitarCliente);
+
+        itemMostrarClientes.setFont(new java.awt.Font("Segoe UI Light", 0, 16)); // NOI18N
+        itemMostrarClientes.setText("Mostrar Clientes");
+        itemMostrarClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemMostrarClientesActionPerformed(evt);
+            }
+        });
+        jMenu2.add(itemMostrarClientes);
+>>>>>>> 44d44096935b546065a87f7ad06cd200e9c83f90
 
         jMenuMantenimiento.add(jMenu2);
+
+        jMenu3.setText("Cliente Jurídico(Empresas)");
+        jMenu3.setFont(new java.awt.Font("Segoe UI Light", 0, 16)); // NOI18N
+
+        itemNuevoClienteJuridico.setFont(new java.awt.Font("Segoe UI Light", 0, 16)); // NOI18N
+        itemNuevoClienteJuridico.setText("Nuevo Cliente Jurídico");
+        itemNuevoClienteJuridico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemNuevoClienteJuridicoActionPerformed(evt);
+            }
+        });
+        jMenu3.add(itemNuevoClienteJuridico);
+
+        itemModificarCliente1.setFont(new java.awt.Font("Segoe UI Light", 0, 16)); // NOI18N
+        itemModificarCliente1.setText("Modificar Cliente Jurídico");
+        itemModificarCliente1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemModificarCliente1ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(itemModificarCliente1);
+
+        itemBuscarCliente1.setFont(new java.awt.Font("Segoe UI Light", 0, 16)); // NOI18N
+        itemBuscarCliente1.setText("Buscar Cliente Jurídico");
+        itemBuscarCliente1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemBuscarCliente1ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(itemBuscarCliente1);
+
+        jMenuItem14.setFont(new java.awt.Font("Segoe UI Light", 0, 16)); // NOI18N
+        jMenuItem14.setText("Deshabilitar Cliente Jurídico");
+        jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem14ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem14);
+
+        itemMostrarClientes1.setFont(new java.awt.Font("Segoe UI Light", 0, 16)); // NOI18N
+        itemMostrarClientes1.setText("Mostrar Clientes Jurídicos");
+        itemMostrarClientes1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemMostrarClientes1ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(itemMostrarClientes1);
+
+        jMenuMantenimiento.add(jMenu3);
 
         jMenuItem5.setText("Compra");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
@@ -134,6 +274,14 @@ public class frmPrincipal extends javax.swing.JFrame {
             }
         });
         jMenuMantenimiento.add(jMenuItem5);
+
+        miUsuarios.setText("Clientes");
+        miUsuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miUsuariosActionPerformed(evt);
+            }
+        });
+        jMenuMantenimiento.add(miUsuarios);
 
         jMenuItem8.setText("Factura");
         jMenuMantenimiento.add(jMenuItem8);
@@ -233,6 +381,124 @@ public class frmPrincipal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
+<<<<<<< HEAD
+    private void itmNuevoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmNuevoUsuarioActionPerformed
+        // TODO add your handling code here:
+        jdpPantallaInicio.removeAll();
+        ifrmNuevoUsuario usuario=new ifrmNuevoUsuario();
+        jdpPantallaInicio.add(usuario);
+        try {
+            usuario.setMaximum(true);
+        } catch (PropertyVetoException ex) {
+            System.out.println(ex);
+        }
+        usuario.setVisible(true);
+    }//GEN-LAST:event_itmNuevoUsuarioActionPerformed
+
+    private void itmListarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmListarUsuariosActionPerformed
+        // TODO add your handling code here:
+        jdpPantallaInicio.removeAll();
+        ifrmMostrarUsuario usuario;
+        try {
+            usuario = new ifrmMostrarUsuario();
+            jdpPantallaInicio.add(usuario);
+            usuario.setMaximum(true);
+            usuario.setVisible(true);
+        } catch (ClassNotFoundException | SQLException | PropertyVetoException ex) {
+            Logger.getLogger(frmPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+    }//GEN-LAST:event_itmListarUsuariosActionPerformed
+
+    private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
+        // TODO add your handling code here:
+        jdpPantallaInicio.removeAll();
+        ifrmModificarUsuario usuario=new ifrmModificarUsuario();
+        jdpPantallaInicio.add(usuario);
+        try {
+            usuario.setMaximum(true);
+        } catch (PropertyVetoException ex) {
+            System.out.println(ex);
+        }
+        usuario.setVisible(true);
+    }//GEN-LAST:event_jMenuItem15ActionPerformed
+=======
+    private void itemDeshabilitarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemDeshabilitarClienteActionPerformed
+        // TODO add your handling code here:
+        iDeshabilitarCliente inc = new iDeshabilitarCliente();
+        jdpPantallaInicio.add(inc);
+        inc.show(true);
+    }//GEN-LAST:event_itemDeshabilitarClienteActionPerformed
+
+    private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
+        // TODO add your handling code here:
+        jdpPantallaInicio.removeAll();
+        iDeshabilitarClienteJuridico inc = new iDeshabilitarClienteJuridico();
+        jdpPantallaInicio.add(inc);
+        inc.show(true);
+    }//GEN-LAST:event_jMenuItem14ActionPerformed
+
+    private void itemNuevoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemNuevoClienteActionPerformed
+        // TODO add your handling code here:
+        iNuevoCliente inc = new iNuevoCliente();
+        jdpPantallaInicio.add(inc);
+        inc.show(true);
+    }//GEN-LAST:event_itemNuevoClienteActionPerformed
+
+    private void itemModificarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemModificarClienteActionPerformed
+        // TODO add your handling code here:
+        
+        iModificarCliente inc = new iModificarCliente();
+        jdpPantallaInicio.add(inc);
+        inc.show(true);
+    }//GEN-LAST:event_itemModificarClienteActionPerformed
+
+    private void itemBuscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemBuscarClienteActionPerformed
+        // TODO add your handling code here:
+        iBuscarCliente inc = new iBuscarCliente();
+        jdpPantallaInicio.add(inc);
+        inc.show(true);
+    }//GEN-LAST:event_itemBuscarClienteActionPerformed
+
+    private void itemMostrarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemMostrarClientesActionPerformed
+        // TODO add your handling code here:
+        iMostrarClientes inc = new iMostrarClientes();
+        jdpPantallaInicio.add(inc);
+        inc.show(true);
+    }//GEN-LAST:event_itemMostrarClientesActionPerformed
+
+    private void itemNuevoClienteJuridicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemNuevoClienteJuridicoActionPerformed
+        // TODO add your handling code here:
+        jdpPantallaInicio.removeAll();
+        iNuevoClienteJuridico incj = new iNuevoClienteJuridico();
+        jdpPantallaInicio.add(incj);
+        incj.show(true);
+    }//GEN-LAST:event_itemNuevoClienteJuridicoActionPerformed
+
+    private void itemModificarCliente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemModificarCliente1ActionPerformed
+        // TODO add your handling code here:
+        jdpPantallaInicio.removeAll();
+        iModificarClienteJuridico incj = new iModificarClienteJuridico();
+        jdpPantallaInicio.add(incj);
+        incj.show(true);
+    }//GEN-LAST:event_itemModificarCliente1ActionPerformed
+
+    private void itemBuscarCliente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemBuscarCliente1ActionPerformed
+        // TODO add your handling code here:
+        jdpPantallaInicio.removeAll();
+        iBuscarClienteJuridico incj = new iBuscarClienteJuridico();
+        jdpPantallaInicio.add(incj);
+        incj.show(true);
+    }//GEN-LAST:event_itemBuscarCliente1ActionPerformed
+
+    private void itemMostrarClientes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemMostrarClientes1ActionPerformed
+        // TODO add your handling code here:
+        jdpPantallaInicio.removeAll();
+        iMostrarClientesJuridicos inc = new iMostrarClientesJuridicos();
+        jdpPantallaInicio.add(inc);
+        inc.show(true);
+    }//GEN-LAST:event_itemMostrarClientes1ActionPerformed
+>>>>>>> 44d44096935b546065a87f7ad06cd200e9c83f90
+
     /**
      * @param args the command line arguments
      */
@@ -266,15 +532,35 @@ public class frmPrincipal extends javax.swing.JFrame {
                 new frmPrincipal().setVisible(true);
             }
         });
-    }
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+<<<<<<< HEAD
+    private javax.swing.JMenuItem itmListarUsuarios;
+    private javax.swing.JMenuItem itmNuevoUsuario;
+=======
+    private javax.swing.JMenuItem itemBuscarCliente;
+    private javax.swing.JMenuItem itemBuscarCliente1;
+    private javax.swing.JMenuItem itemDeshabilitarCliente;
+    private javax.swing.JMenuItem itemModificarCliente;
+    private javax.swing.JMenuItem itemModificarCliente1;
+    private javax.swing.JMenuItem itemMostrarClientes;
+    private javax.swing.JMenuItem itemMostrarClientes1;
+    private javax.swing.JMenuItem itemNuevoCliente;
+    private javax.swing.JMenuItem itemNuevoClienteJuridico;
+>>>>>>> 44d44096935b546065a87f7ad06cd200e9c83f90
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
+<<<<<<< HEAD
+    private javax.swing.JMenuItem jMenuItem15;
+=======
+    private javax.swing.JMenuItem jMenuItem14;
+>>>>>>> 44d44096935b546065a87f7ad06cd200e9c83f90
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
@@ -282,7 +568,6 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JMenu jMenuMantenimiento;
     private javax.swing.JMenu jMenuSesion;
     private javax.swing.JDesktopPane jdpPantallaInicio;
