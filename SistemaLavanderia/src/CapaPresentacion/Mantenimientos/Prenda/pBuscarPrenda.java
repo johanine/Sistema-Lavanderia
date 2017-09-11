@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package CapaPresentacion.Mantenimientos.Prenda;
+
 import CapaLogica.cPrenda;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,20 +13,22 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Luis Angel
  */
-public class frmBuscarPrenda extends javax.swing.JPanel {
+public class pBuscarPrenda extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form frmBuscarPrenda
+     * Creates new form pBuscarPrenda
      */
-    public frmBuscarPrenda() {
+    public pBuscarPrenda() {
         initComponents();
         model=(DefaultTableModel)tPrenda.getModel();
     }
     DefaultTableModel model;
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -88,8 +91,8 @@ public class frmBuscarPrenda extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -99,7 +102,7 @@ public class frmBuscarPrenda extends javax.swing.JPanel {
                         .addComponent(jLabel3)
                         .addGap(18, 18, 18)
                         .addComponent(cbCampo, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 5, Short.MAX_VALUE)
                         .addComponent(jLabel2)
                         .addGap(42, 42, 42)
                         .addComponent(txtDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -136,8 +139,10 @@ public class frmBuscarPrenda extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAceptar)
                     .addComponent(btnCerrar))
-                .addContainerGap(121, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
     cPrenda prenda=new cPrenda();
     private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
@@ -145,7 +150,7 @@ public class frmBuscarPrenda extends javax.swing.JPanel {
         while(0!=model.getRowCount()){
             model.removeRow(0);
         }
-        
+
         ResultSet r=null;
         if(txtDesc.getText()!=""){
             r=prenda.Buscar(cbCampo.getSelectedItem().toString(), txtDesc.getText());
@@ -163,7 +168,6 @@ public class frmBuscarPrenda extends javax.swing.JPanel {
         } catch (SQLException ex) {
             Logger.getLogger(frmBuscarPrenda.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }//GEN-LAST:event_btnAceptarActionPerformed
 
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed

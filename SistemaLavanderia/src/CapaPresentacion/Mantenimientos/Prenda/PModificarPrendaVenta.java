@@ -9,12 +9,12 @@ package CapaPresentacion.Mantenimientos.Prenda;
  *
  * @author Luis Angel
  */
-public class FrmModificarPrendaVenta extends javax.swing.JFrame {
+public class PModificarPrendaVenta extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form frmModificarPrenda
+     * Creates new form pModificarPrenda
      */
-    public FrmModificarPrendaVenta() {
+    public PModificarPrendaVenta() {
         initComponents();
     }
 
@@ -27,6 +27,11 @@ public class FrmModificarPrendaVenta extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        txtobs = new javax.swing.JTextField();
+        spCant = new javax.swing.JSpinner();
+        btnaccept = new javax.swing.JButton();
+        btnCancel = new javax.swing.JButton();
+        btnBorrar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -36,15 +41,19 @@ public class FrmModificarPrendaVenta extends javax.swing.JFrame {
         txtdesc = new javax.swing.JTextField();
         txtpu = new javax.swing.JTextField();
         txtimporte = new javax.swing.JTextField();
-        txtobs = new javax.swing.JTextField();
-        spCant = new javax.swing.JSpinner();
-        btnaccept = new javax.swing.JButton();
-        btnCancel = new javax.swing.JButton();
-        btnBorrar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        btnaccept.setText("Aceptar");
+        btnaccept.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnacceptActionPerformed(evt);
+            }
+        });
 
-        jLabel1.setText("jLabel1");
+        btnCancel.setText("Cancelar");
+
+        btnBorrar.setText("Borrar");
+
+        jLabel1.setText("MODIFICAR PRENDA");
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("Descripcion:");
@@ -72,17 +81,6 @@ public class FrmModificarPrendaVenta extends javax.swing.JFrame {
             }
         });
 
-        btnaccept.setText("Aceptar");
-        btnaccept.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnacceptActionPerformed(evt);
-            }
-        });
-
-        btnCancel.setText("Cancelar");
-
-        btnBorrar.setText("Borrar");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -100,26 +98,28 @@ public class FrmModificarPrendaVenta extends javax.swing.JFrame {
                         .addGap(49, 49, 49)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtdesc, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
-                            .addComponent(jLabel1)
                             .addComponent(txtimporte)
                             .addComponent(txtpu)
                             .addComponent(spCant, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtobs)))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(24, 24, 24)
                         .addComponent(btnaccept)
-                        .addGap(88, 88, 88)
+                        .addGap(74, 74, 74)
                         .addComponent(btnCancel)
                         .addGap(36, 36, 36)
-                        .addComponent(btnBorrar)))
-                .addContainerGap(74, Short.MAX_VALUE))
+                        .addComponent(btnBorrar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(161, 161, 161)
+                        .addComponent(jLabel1)))
+                .addContainerGap(132, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(20, 20, 20)
                 .addComponent(jLabel1)
-                .addGap(27, 27, 27)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txtdesc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -144,55 +144,20 @@ public class FrmModificarPrendaVenta extends javax.swing.JFrame {
                     .addComponent(btnaccept)
                     .addComponent(btnCancel)
                     .addComponent(btnBorrar))
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addContainerGap(167, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtdescActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdescActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtdescActionPerformed
-
     private void btnacceptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnacceptActionPerformed
-        // 
+        
     }//GEN-LAST:event_btnacceptActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmModificarPrendaVenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmModificarPrendaVenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmModificarPrendaVenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmModificarPrendaVenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
+    private void txtdescActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdescActionPerformed
+        
+    }//GEN-LAST:event_txtdescActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FrmModificarPrendaVenta().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBorrar;
