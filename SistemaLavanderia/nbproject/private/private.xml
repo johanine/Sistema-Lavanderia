@@ -3,16 +3,26 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/laboratorio%205.1/AppLavanderiaJava/LavanderiaJ/SistemaLavanderia/src/CapaPresentacion/frmMantenimientos.java</file>
             <file>file:/E:/laboratorio%205.1/AppLavanderiaJava/LavanderiaJ/SistemaLavanderia/src/CapaPresentacion/Mantenimientos/Clientes/pBuscarCliente.java</file>
-            <file>file:/E:/laboratorio%205.1/AppLavanderiaJava/LavanderiaJ/SistemaLavanderia/src/CapaPresentacion/frmPresentacion.java</file>
+            <file>file:/E:/laboratorio%205.1/AppLavanderiaJava/LavanderiaJ/SistemaLavanderia/src/CapaPresentacion/Mantenimientos/Cliente/close.png</file>
             <file>file:/E:/laboratorio%205.1/AppLavanderiaJava/LavanderiaJ/SistemaLavanderia/src/CapaPresentacion/Mantenimientos/Clientes/pMostrarClientes.java</file>
-            <file>file:/E:/laboratorio%205.1/AppLavanderiaJava/LavanderiaJ/SistemaLavanderia/src/CapaPresentacion/Mantenimientos/Clientes/pModificarCliente.java</file>
+            <file>file:/E:/laboratorio%205.1/AppLavanderiaJava/LavanderiaJ/SistemaLavanderia/src/CapaPresentacion/Mantenimientos/Cliente/cancel.png</file>
+            <file>file:/E:/laboratorio%205.1/AppLavanderiaJava/LavanderiaJ/SistemaLavanderia/src/CapaLogica/cProducto.java</file>
             <file>file:/E:/laboratorio%205.1/AppLavanderiaJava/LavanderiaJ/SistemaLavanderia/src/CapaPresentacion/frmBienvenida.java</file>
+            <file>file:/E:/laboratorio%205.1/AppLavanderiaJava/LavanderiaJ/SistemaLavanderia/src/CapaLogica/cBoleta.java</file>
+            <file>file:/E:/laboratorio%205.1/AppLavanderiaJava/LavanderiaJ/SistemaLavanderia/src/CapaPresentacion/Main.java</file>
+            <file>file:/E:/laboratorio%205.1/AppLavanderiaJava/LavanderiaJ/SistemaLavanderia/src/CapaLogica/cCompra.java</file>
+            <file>file:/E:/laboratorio%205.1/AppLavanderiaJava/LavanderiaJ/SistemaLavanderia/src/CapaPresentacion/frmMantenimientos.java</file>
+            <file>file:/E:/laboratorio%205.1/AppLavanderiaJava/LavanderiaJ/SistemaLavanderia/src/CapaPresentacion/frmPresentacion.java</file>
+            <file>file:/E:/laboratorio%205.1/AppLavanderiaJava/LavanderiaJ/SistemaLavanderia/src/CapaPresentacion/Mantenimientos/Cliente/pMostrarClientes.java</file>
+            <file>file:/E:/laboratorio%205.1/AppLavanderiaJava/LavanderiaJ/SistemaLavanderia/src/CapaPresentacion/Mantenimientos/Cliente/pModificarCliente.java</file>
+            <file>file:/E:/laboratorio%205.1/AppLavanderiaJava/LavanderiaJ/SistemaLavanderia/src/CapaPresentacion/pServicio.java</file>
+            <file>file:/E:/laboratorio%205.1/AppLavanderiaJava/LavanderiaJ/SistemaLavanderia/src/CapaPresentacion/Mantenimientos/Clientes/pModificarCliente.java</file>
             <file>file:/E:/laboratorio%205.1/AppLavanderiaJava/LavanderiaJ/SistemaLavanderia/src/CapaPresentacion/frmBuscarUsuario.java</file>
             <file>file:/E:/laboratorio%205.1/AppLavanderiaJava/LavanderiaJ/SistemaLavanderia/src/CapaPresentacion/FrmLogin.java</file>
-            <file>file:/E:/laboratorio%205.1/AppLavanderiaJava/LavanderiaJ/SistemaLavanderia/src/CapaPresentacion/Main.java</file>
+            <file>file:/E:/laboratorio%205.1/AppLavanderiaJava/LavanderiaJ/SistemaLavanderia/src/CapaLogica/cUsuario.java</file>
             <file>file:/E:/laboratorio%205.1/AppLavanderiaJava/LavanderiaJ/SistemaLavanderia/src/CapaPresentacion/frmPrincipal.java</file>
+            <file>file:/E:/laboratorio%205.1/AppLavanderiaJava/LavanderiaJ/SistemaLavanderia/src/CapaPresentacion/Mantenimientos/Cliente/nuevo.png</file>
             <file>file:/E:/laboratorio%205.1/AppLavanderiaJava/LavanderiaJ/SistemaLavanderia/src/CapaPresentacion/Mantenimientos/Clientes/pAgregarCliente.java</file>
         </group>
     </open-files>
