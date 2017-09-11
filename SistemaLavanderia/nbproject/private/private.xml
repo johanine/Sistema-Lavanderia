@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/E:/laboratorio%205.1/AppLavanderiaJava/LavanderiaJ/SistemaLavanderia/src/CapaPresentacion/Mantenimientos/Clientes/pBuscarCliente.java</file>
             <file>file:/E:/laboratorio%205.1/AppLavanderiaJava/LavanderiaJ/SistemaLavanderia/src/CapaPresentacion/Mantenimientos/Cliente/close.png</file>
             <file>file:/E:/laboratorio%205.1/AppLavanderiaJava/LavanderiaJ/SistemaLavanderia/src/CapaPresentacion/Mantenimientos/Clientes/pMostrarClientes.java</file>
@@ -24,6 +25,13 @@
             <file>file:/E:/laboratorio%205.1/AppLavanderiaJava/LavanderiaJ/SistemaLavanderia/src/CapaPresentacion/frmPrincipal.java</file>
             <file>file:/E:/laboratorio%205.1/AppLavanderiaJava/LavanderiaJ/SistemaLavanderia/src/CapaPresentacion/Mantenimientos/Cliente/nuevo.png</file>
             <file>file:/E:/laboratorio%205.1/AppLavanderiaJava/LavanderiaJ/SistemaLavanderia/src/CapaPresentacion/Mantenimientos/Clientes/pAgregarCliente.java</file>
+=======
+            <file>file:/C:/Users/joha/Documents/GitHub/Sistema-Lavanderia/SistemaLavanderia/src/CapaPresentacion/Mantenimientos/Cliente/iBuscarCliente.java</file>
+            <file>file:/C:/Users/joha/Documents/GitHub/Sistema-Lavanderia/SistemaLavanderia/src/CapaLogica/cCliente.java</file>
+            <file>file:/C:/Users/joha/Documents/GitHub/Sistema-Lavanderia/SistemaLavanderia/src/CapaLogica/cClienteJuridico.java</file>
+            <file>file:/C:/Users/joha/Documents/GitHub/Sistema-Lavanderia/SistemaLavanderia/src/CapaPresentacion/frmPrincipal.java</file>
+            <file>file:/C:/Users/joha/Documents/GitHub/Sistema-Lavanderia/SistemaLavanderia/src/CapaPresentacion/Mantenimientos/ClienteJuridico/iNuevoClienteJuridico.java</file>
+>>>>>>> 44d44096935b546065a87f7ad06cd200e9c83f90
         </group>
     </open-files>
 </project-private>
